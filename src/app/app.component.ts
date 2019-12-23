@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'to-do-list';
+  @ViewChild('nameInput', null) input: any;
+  names: string[] = ['Bob', 'Antonio', 'Jack', 'Rick', 'Maria'];
+  value = '';
+
+  addName() {
+    this.names.push(this.value);
+    this.value = '';
+  }
+
+  deleteItem(name: string) {
+    this.names = this.names.filter(item => item !== name);
+    
+  }
+
+  // changeValue(event: any) {
+  //   this.value = (event.target.value);
+  // }
 }
