@@ -1,6 +1,4 @@
-
-
-  <p *ngFor="let name of names" (click)="deleteItem(name)">{{ name }}</p>
-  <input type="text" [(ngModel)]="value">
-  <button (click)="addName()">Add name</button>
-
+<input class="col-8"type="text" [(ngModel)]="value">
+<button class="btn btn-success" (click)="addName()">Add name</button>
+<p *ngFor="let name of names" (click)="deleteItem(name)">{{ name }}</p>
+<p *ngIf="names.length == 0">Empty names are empty, enter someone!</p>

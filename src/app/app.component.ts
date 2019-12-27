@@ -11,6 +11,10 @@ export class AppComponent {
   value = '';
 
   addName() {
+    if (this.value.length < 1){
+      return;
+    }
+    this.value = this.value.substr(0, 1).toLocaleUpperCase() + this.value.substr(1).toLowerCase();
     this.names.push(this.value);
     this.value = '';
   }
